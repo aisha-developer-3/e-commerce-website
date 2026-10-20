@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #fdfbf7;
+    --surface: #faf6f0;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f8f4ec;
+    --surface-container: #f3ece1;
+    --surface-container-high: #eae1d3;
+    --surface-container-highest: #ded3c2;
+    --on-surface: #26201c;
+    --on-surface-variant: #61564d;
+    --primary: #26201c;
+    --on-primary: #ffffff;
+    --secondary: #b86b43;
+    --on-secondary: #ffffff;
+    --outline: #9e9187;
+    --outline-variant: #ede4d8;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--on-surface);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-serif, .font-headline-lg, .font-headline-md, .font-headline-sm {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+
+  .font-headline-lg {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  .font-headline-md {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .font-headline-sm {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f4ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8cdbe;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b86b43;
+}

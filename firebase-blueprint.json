@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Atelier curated luxury product entity",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 120 },
+        "slug": { "type": "string", "maxLength": 150 },
+        "sku": { "type": "string", "maxLength": 50 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "categoryId": { "type": "string" },
+        "price": { "type": "number" },
+        "stockQuantity": { "type": "number" },
+        "status": { "type": "string", "enum": ["active", "draft", "archived"] }
+      },
+      "required": ["name", "slug", "sku", "price", "categoryId"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category entity",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 80 },
+        "slug": { "type": "string", "maxLength": 90 },
+        "description": { "type": "string", "maxLength": 500 },
+        "status": { "type": "string", "enum": ["active", "inactive"] }
+      },
+      "required": ["name", "slug"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order entity",
+      "type": "object",
+      "properties": {
+        "customerEmail": { "type": "string", "format": "email" },
+        "totalAmount": { "type": "number" },
+        "paymentStatus": { "type": "string", "enum": ["paid", "pending", "failed"] },
+        "fulfillmentStatus": { "type": "string", "enum": ["pending", "processing", "shipped", "delivered", "cancelled"] }
+      },
+      "required": ["customerEmail", "totalAmount"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Catalog products collection"
+    },
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Categories collection"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders collection"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ATELIER — Luxury Curation & E-Commerce",
+  "description": "An editorial luxury e-commerce storefront and comprehensive admin management suite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
